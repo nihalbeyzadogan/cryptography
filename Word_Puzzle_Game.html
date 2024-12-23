@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Puzzle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find the Word!</h1>
+    <p>Clue: <strong>HYNHYNFX</strong></p>
+    <p>Hint: Caesar Cipher (+5)</p>
+    <input type="text" id="userInput" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        // Correct word: "DISSEMBLE" (Caesar cipher with +5 shift)
+        const correctAnswer = "DISSEMBLE";
+
+        function checkAnswer() {
+            const userInput = document.getElementById("userInput").value.toUpperCase();
+            const resultElement = document.getElementById("result");
+
+            if (userInput === correctAnswer) {
+                resultElement.textContent = "Yes, that's correct!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = `No, the correct answer is: ${correctAnswer}`;
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
